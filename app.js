@@ -1,38 +1,104 @@
 window.onload = function() {
+  addEventListeners();
+  setupVariabels();
+}
+
+function setupVariabels() {
+  window.canvasDrawer = new CanvasDrawer(document.getElementById("tetris-canvas"));
+  window.lifeCycle = new LifeCycle(canvasDrawer);
+}
+
+function addEventListeners() {
+  document.addEventListener('keydown', function(event) {
+    event.preventDefault();
+    switch (event.code) {
+      case "ArrowUp":
+        return onUpButtonClick();
+      case "ArrowDown":
+        return onDownButtonClick();
+      case "ArrowLeft":
+        return onLeftButtonClick();
+      case "ArrowRight":
+        return onRightButtonClick();
+      case "Space":
+        return onRotateButtonClick();
+      case "Pause":
+        return onPauseButtonClick();
+      case "F10":
+        return onSoundButtonClick();
+      case "Escape":
+        return onOnOffButtonClick();
+      case "F2":
+        return onResetButtonClick();
+
+    }
+});
 }
 
 function onPauseButtonClick() {
-  alert("pause");
+  if(!window.game) {
+    return;
+  }
+  lifeCycle.pause(window.game);
 }
 
 function onSoundButtonClick() {
-  alert("sound");
 }
 
 function onOnOffButtonClick() {
-  alert("on");
+  (window.game)? stop() : start();
+}
+
+function stop() {
+  lifeCycle.stop();
+  this.canvasDrawer.clean();
+  game = null;
+}
+
+function start() {
+  game = new Racing();
+  lifeCycle.start(game);
 }
 
 function onResetButtonClick() {
-  alert("reset");
+  if(!window.game) {
+    return;
+  }
+  stop();
+  start();
 }
 
 function onUpButtonClick() {
-  alert("up");
+  if(!window.game) {
+    return;
+  }
+  game.up();
 }
 
 function onDownButtonClick() {
-  alert("down");
+  if(!window.game) {
+    return;
+  }
+  game.down();
 }
 
 function onLeftButtonClick() {
-  alert("left");
+  if(!window.game) {
+    return;
+  }
+  game.left();
 }
 
 function onRightButtonClick() {
-  alert("right");
+  if(!window.game) {
+    return;
+  }
+  game.right();
 }
 
 function onRotateButtonClick() {
-  alert("rotate");
+  if(!window.game) {
+    return;
+  }
+  game.rotate();
 }

@@ -6,7 +6,19 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <!-- Scripts -->
     <script src="app.js"></script>
+    <script src="game.js"></script>
+    <script src="bounds.js"></script>
+    <script src="car.js"></script>
+    <script src="barier.js"></script>
+    <script src="road.js"></script>
+    <script src="state-drawer.js"></script>
+    <script src="racing.js"></script>
+    <script src="canvas-drawer.js"></script>
+    <script src="life-cycle.js"></script>
+
+    <!-- Tetris -->
     <div class = "tetris">
       <div class = "corpus-head">
         <div class = "face">
@@ -39,19 +51,19 @@
         <div class="button-area">
           <div class="menu-bar">
             <div class="button-wrapper">
-              <button class = "button pause"></button>
+              <button class = "button pause" onclick="onPauseButtonClick()"></button>
               <div class = "button-label">Pause</div>
             </div>
             <div class="button-wrapper">
-              <button class = "button sound"></button>
+              <button class = "button sound" onclick="onSoundButtonClick()"></button>
               <div class = "button-label">Sound</div>
             </div>
             <div class="button-wrapper">
-              <button class = "button on"></button>
+              <button class = "button on" onclick="onOnOffButtonClick()"></button>
               <div class = "button-label">On/Off</div>
             </div>
             <div class="button-wrapper">
-              <button class = "button reset"></button>
+              <button class = "button reset" onclick="onResetButtonClick()"></button>
               <div class = "button-label">Reset</div>
             </div>
           </div>
@@ -60,31 +72,31 @@
               <div class="cross"></div>
               <div class="left-part-level left-part-level-top">
                 <div class="button-wrapper up-button-wrapper">
-                  <button class = "button up"></button>
+                  <button class = "button up" onclick="onUpButtonClick()"></button>
                   <div class = "button-label">Up</div>
                 </div>
               </div>
               <div class="left-part-level left-part-level-middle">
                 <div class="button-wrapper left-button-wrapper">
-                  <button class = "button left"></button>
+                  <button class = "button left" onclick="onLeftButtonClick()"></button>
                   <div class = "button-label">Left</div>
                 </div>
                 <div class="space"></div>
                 <div class="button-wrapper right-button-wrapper">
-                  <button class = "button right"></button>
+                  <button class = "button right" onclick="onRightButtonClick()"></button>
                   <div class = "button-label">Right</div>
                 </div>
               </div>
               <div class="left-part-level left-part-level-bottom">
                 <div class="button-wrapper down-button-wrapper">
-                  <button class = "button down"></button>
+                  <button class = "button down" onclick="onDownButtonClick()"></button>
                   <div class = "button-label">Down</div>
                 </div>
               </div>
             </div>
             <div class = "half-width right-part">
               <div class="button-wrapper">
-                <button class = "button"></button>
+                <button class = "button" onclick="onRotateButtonClick()"></button>
                 <div class = "button-label rotate">Roate</div>
                 <div class = "button-label alternative">Direction</div>
               </div>

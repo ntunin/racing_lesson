@@ -56,6 +56,8 @@
 
 .corpus-head .face .screen .canvas-container {
   position: absolute;
+  padding-left: 8px;
+  overflow: hidden;
   width: 60%;
   left: 10%;
   top: 10%;
