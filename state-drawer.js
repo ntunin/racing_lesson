@@ -20,15 +20,11 @@
     }
 
     function clean(){
-      for(var i = 0; i < this.bound.height; i++) {
-        this.cleanRow(this.state[i]);
-      }
+      // TODO: в цикле для каждой строки массива state вызвать cleanRow() (1/2)
     }
 
     function cleanRow(row) {
-      for(var j = 0; j < this.bound.width; j++) {
-        row[j] = j === 0 || j === this.bound.width - 1? 1:0;
-      }
+        // TODO: в цикле для каждого элемента строки присвоить 1 если элемент первый или последний и 0 в противном случае (1/2)
     }
 
     function getCurrentState() {

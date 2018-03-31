@@ -21,15 +21,11 @@
     }
 
     this.drawPixel = function(x, y) {
-      this.context.fillStyle = "black";
-      this.context.strokeStyle = "black";
-      this.context.strokeRect(x, y, this.pixelSize, this.pixelSize);
-      this.context.fillRect(x + 2, y + 2, this.pixelSize - 4, this.pixelSize - 4);
+      // TODO: нарисовать квадратный пиксель размером this.pixelSize с рамкой 
     }
 
     this.clean = function() {
-      this.context.fillStyle = "#31302d";
-      this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+      // TODO: Очисить экран цветом #31302d
     }
   }
 }());

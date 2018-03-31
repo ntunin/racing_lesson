@@ -11,34 +11,35 @@ function setupVariabels() {
 function addEventListeners() {
   document.addEventListener('keydown', function(event) {
     event.preventDefault();
+    // TODO: добавить обработчики клавиатуры
     switch (event.code) {
       case "ArrowUp":
-        return onUpButtonClick();
+        return ;
       case "ArrowDown":
-        return onDownButtonClick();
+        return ;
       case "ArrowLeft":
-        return onLeftButtonClick();
+        return ;
       case "ArrowRight":
-        return onRightButtonClick();
+        return ;
       case "Space":
-        return onRotateButtonClick();
+        return ;
       case "Pause":
-        return onPauseButtonClick();
+        return ;
       case "F10":
-        return onSoundButtonClick();
+        return ;
       case "Escape":
-        return onOnOffButtonClick();
+        return ;
       case "F2":
-        return onResetButtonClick();
+        return ;
 
     }
 });
 }
 
+
+  // TODO: Удалить возожность нажимать на кнопки (кроме включения), если тетрис не включен
+
 function onPauseButtonClick() {
-  if(!window.game) {
-    return;
-  }
   lifeCycle.pause(window.game);
 }
 
@@ -61,44 +62,26 @@ function start() {
 }
 
 function onResetButtonClick() {
-  if(!window.game) {
-    return;
-  }
   stop();
   start();
 }
 
 function onUpButtonClick() {
-  if(!window.game) {
-    return;
-  }
   game.up();
 }
 
 function onDownButtonClick() {
-  if(!window.game) {
-    return;
-  }
   game.down();
 }
 
 function onLeftButtonClick() {
-  if(!window.game) {
-    return;
-  }
   game.left();
 }
 
 function onRightButtonClick() {
-  if(!window.game) {
-    return;
-  }
   game.right();
 }
 
 function onRotateButtonClick() {
-  if(!window.game) {
-    return;
-  }
   game.rotate();
 }

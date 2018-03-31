@@ -4,10 +4,9 @@
     this.interval = null;
 
     this.start = function(game) {
-      this.interval = setInterval(function() {
-        game.update();
-        canvasDrawer.draw(game);
-      }, 250);
+      // TODO: Запустить циклическую обработку методов   game.update(); и canvasDrawer.draw(game); с интервалом 0.25c
+      game.update();
+      canvasDrawer.draw(game);
     }
 
     this.stop = function() {
